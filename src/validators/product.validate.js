@@ -16,7 +16,7 @@ export const ProductValidate = (req, res, next) => {
         // console.log(result)
     
         if (result.error) {
-            return res.json({ error: 1, message: result.error.details[0].message });
+            return res.status(400).json({ error: 1, message: result.error.details[0].message });
         }
         next();
     } catch (error) {
